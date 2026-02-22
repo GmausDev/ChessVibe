@@ -1,0 +1,21 @@
+[package]
+name = "rustchess"
+version = "1.0.0"
+edition = "2021"
+authors = ["ChessVibe Team"]
+description = "A chess game with 2D graphics written in pure Rust"
+license = "MIT"
+
+[dependencies]
+macroquad = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rand = "0.8"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3
+
+[profile.dev]
+opt-level = 1
